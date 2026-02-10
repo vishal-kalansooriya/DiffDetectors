@@ -101,7 +101,7 @@ This represents a **distributed software architecture**.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/DiffDetectors.git
+   git clone https://github.com/vishal-kalansooriya/DiffDetectors.git
    ```
 2. Place the project in your local server directory
 (e.g. htdocs if you are using XAMPP).
@@ -125,9 +125,9 @@ Any external code, APIs, or references used are acknowledged within the source c
 
 ### 👨‍💻 Author
 
-Vishal Kalansooriya
-BSc (Hons) Software Engineering
-University of Bedfordshire
+-Vishal Kavinda Kalansooriya
+-BSc (Hons) Software Engineering
+-University of Bedfordshire
 
 ---
 
