@@ -102,3 +102,35 @@ This represents a **distributed software architecture**.
 1. Clone the repository:
    ```bash
    git clone https://github.com/<your-username>/DiffDetectors.git
+   ```
+2. Place the project in your local server directory
+(e.g. htdocs if you are using XAMPP).
+
+3. Import the provided database SQL file into MySQL.
+
+4. Configure database credentials in the configuration file.
+
+5. Run the project in your browser:
+   ```bash
+   http://localhost/DiffDetectors
+   ```
+---
+
+### 📄 Academic Declaration
+
+This project was developed as an individual academic assignment.
+Any external code, APIs, or references used are acknowledged within the source code comments and documentation.
+
+---
+
+### 👨‍💻 Author
+
+Vishal Kalansooriya
+BSc (Hons) Software Engineering
+University of Bedfordshire
+
+---
+
+### 📜 License
+
+This project is licensed under the MIT License.
