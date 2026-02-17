@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Horizon';
+    src: url('../fonts/Horizon.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    color: white;
+}
+h1{
+    font-size: 45px;
+    text-transform: uppercase;
+    font-family: 'Horizon', sans-serif;
+    text-shadow: 0px 5px 5px #000000;
+}
