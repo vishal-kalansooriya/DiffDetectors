@@ -1,0 +1,185 @@
+body{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #2592db;
+    background: linear-gradient(179deg,rgb(38, 148, 221) 0%, rgba(0, 51, 85, 1) 100%);
+    background-image: url("../img/loading/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* main images container */
+.imgContainer{
+    position: relative;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgContainer img{
+    border: 12px solid white;
+    width: 450px;
+}
+.imgContainer img:nth-child(1){
+    transform: translate(50px, 10px);
+    rotate: 7deg;
+    z-index: 3;
+}
+.imgContainer img:nth-child(2){
+    rotate: -5deg;
+    z-index: 2;
+}
+.imgContainer img:nth-child(3){
+    transform: translate(-100px, 50px);
+    rotate: 5deg;
+    z-index: 1;
+}
+
+/* progress bar */
+.bar{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 150px;
+    background-color: #00153bb9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+}
+.progressContainer{
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
+    border: 5px solid white;
+    overflow: hidden;
+    padding: 4px;
+}
+.progress{
+    width: 0%;
+    height: 13px;
+    border-radius: 3px;
+    background-color: #FAA12F;
+    animation: loading 3s linear forwards;
+}
+@keyframes loading {
+    to{
+        width: 100%;
+    }
+}
+
+/* magnifier img */
+#magnifierImg{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 500px;
+    animation: magnifierAnim 5s linear infinite;
+    z-index: 4;
+}
+@keyframes magnifierAnim {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    50%{
+        transform: translate(580px, 0px) rotate(-90deg);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+
+/* background images */
+.bgImg{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    animation: bgAnim 5s linear infinite;
+    opacity: 0.2;
+    filter: drop-shadow(0px 5px 5px black);
+}
+.bgImg:nth-child(1){
+    top: 40px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+}
+.bgImg:nth-child(2){
+    top: 60px;
+    right: 50px;
+    rotate: 50deg;
+    width: 150px;
+    height: 150px;
+}
+.bgImg:nth-child(3){
+    bottom: 200px;
+    left: 10px;
+    width: 170px;
+    height: 170px;
+    rotate: 120deg;
+}
+.bgImg:nth-child(4){
+    top: 100px;
+    left: 50px;
+    rotate: 30deg;
+}
+.bgImg:nth-child(5){
+    top: 160px;
+    right: 30px;
+    rotate: 100deg;
+}
+.bgImg:nth-child(6){
+    bottom: 80px;
+    left: 500px;
+    width: 200px;
+    height: 200px;
+    rotate: 50deg;
+}
+.bgImg:nth-child(7){
+    bottom: 0px;
+    left: 20px;
+    rotate: 20deg;
+}
+.bgImg:nth-child(8){
+    bottom: 0px;
+    right: 20px;
+    rotate: 30deg;
+    width: 150px;
+    height: 150px;
+}
+.f1Img{
+    position: absolute;
+    right: 40px;
+    top: 370px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    z-index: 5;
+    animation: bgAnim 5s linear infinite;
+}
+.f2Img{
+    position: absolute;
+    right: 100px;
+    top: 300px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    z-index: 5;
+    rotate: 40deg;
+    animation: bgAnim 5s linear infinite;
+}
+@keyframes bgAnim {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    50%{
+        transform: translate(-20px, -20px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
