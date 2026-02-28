@@ -8,7 +8,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Horizon', sans-serif;
+    text-shadow: 0px 3px 3px #000000;
     font-weight: normal;
     color: white;
 }
@@ -23,6 +24,79 @@ body{
 h1{
     font-size: 45px;
     text-transform: uppercase;
-    font-family: 'Horizon', sans-serif;
     text-shadow: 0px 5px 5px #000000;
+}
+
+/* game body */
+.game-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.game-container {
+    width: 1366px;
+    height: 605px;
+    transform-origin: center center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* default */
+input{
+    max-width: 400px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    color: black;
+    font-size: 18px;
+}
+
+input[type="password"]{
+    font-family: sans-serif;
+}
+
+button{
+    width: fit-content;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    border-radius: 50px;
+    background-color: #FAA12F;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: inset 0px -5px 5px #854b00, 0px 0px 5px #ffffff;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: #854b00;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
+button+button{
+    margin-left: 20px;
+    background-color: #777777;
+    box-shadow: inset 0px -5px 5px #313131, 0px 0px 5px #ffffff;
+}
+button+button:hover{
+    background-color: #313131;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
+
+p{
+    font-size: 18px;
+}
+
+a{
+    color: #000000;
+    text-shadow: 0px 3px 3px #ffffff;
+    transition: 0.3s;
+    text-decoration: none;
+}
+a:hover{
+    color: #585858;
 }

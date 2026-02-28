@@ -1,0 +1,57 @@
+.game-container{
+    background-image: url("../img/home/bg.jpg");
+    padding: 50px;
+}
+.game-container>div, .game-container>form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p{
+    font-size: 24px;
+}
+#sound, #noSound{
+    filter: invert(100%);
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+}
+#playButton{
+    height: 360px;
+    width: 100%;
+    margin-top: 40px;
+    justify-content: center;
+}
+#playButton>button{
+    font-size: 28px;
+    animation: zoomIn 1s infinite;
+}
+@keyframes zoomIn {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+form button:nth-of-type(1){
+    background-color: #80ee37;
+    box-shadow: inset 0px -5px 5px #255c01, 0px 0px 5px #ffffff;
+}
+form button:nth-of-type(1):hover{
+    background-color: #255c01;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
+form button:nth-of-type(2){
+    background-color: #ff44a1;
+    box-shadow: inset 0px -5px 5px #55012b, 0px 0px 5px #ffffff;
+}
+form button:nth-of-type(2):hover{
+    background-color: #55012b;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
