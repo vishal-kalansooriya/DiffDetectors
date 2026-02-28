@@ -1,0 +1,25 @@
+.game-container{
+    background-image: url("../img/sign/bg.jpg");
+    background-position: bottom center;
+}
+
+.formContainer{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    gap: 60px;
+}
+
+.formContainer, form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    max-width: 400px;
+    width: 100%;
+    gap: 20px;
+}

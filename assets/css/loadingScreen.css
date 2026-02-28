@@ -1,31 +1,18 @@
-/* game body */
-.game-wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.game-container {
-    width: 1366px;
-    height: 605px;
-    transform-origin: center center;
+.game-container{
     background-image: url("../img/loading/bg.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
 /* main images container */
 .imgContainer{
     position: relative;
-    top: 60px;
+    top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .imgContainer img{
     border: 12px solid white;
-    width: 450px;
+    width: 420px;
 }
 .imgContainer img:nth-child(1){
     transform: translate(50px, 10px);
@@ -47,7 +34,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 150px;
+    height: 140px;
     background-color: #00153bb9;
     display: flex;
     justify-content: center;
