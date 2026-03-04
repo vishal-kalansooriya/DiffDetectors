@@ -16,6 +16,7 @@ p{
     height: 50px;
     object-fit: contain;
     object-position: center;
+    cursor: pointer;
 }
 #playButton{
     height: 360px;

@@ -23,5 +23,6 @@
     </script>
 </head>
 <body>
+    <div id="preloader"></div>
     <div class="game-wrapper">
         <div class="game-container">

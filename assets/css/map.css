@@ -1,3 +1,126 @@
 .game-container{
     background-image: url("../img/map/bg.jpg");
+    background-position: top;
+    position: relative;
+}
+
+article{
+    position: relative;
+    width: 250px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+article:hover{
+    transform: scale(110%);
+}
+.board{
+    position: relative;
+    width: 200px;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.board img{
+    width: 100%;
+}
+.board p{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.level {
+    animation-name: fadeLevel;
+}
+.score {
+    animation-name: fadeScore;
+}
+@keyframes fadeLevel {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    50% {opacity: 0;}
+    90% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeScore {
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    50% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.puzzle{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    top: -40px;
+    border: 10px solid white;
+}
+.icon{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+#puzzle1{
+    top: 80px;
+    left: 50px;
+    rotate: -10deg;
+}
+#puzzle2{
+    top: 50px;
+    left: 250px;
+    rotate: 0deg;
+}
+#puzzle3{
+    top: -380px;
+    left: 550px;
+    rotate: 10deg;
+}
+#puzzle4{
+    top: -400px;
+    left: 850px;
+    rotate: 5deg;
+}
+#puzzle5{
+    top: -950px;
+    left: 1050px;
+    rotate: -5deg;
+}
+
+#nextPageButton, #previousPageButton{
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    z-index: 10;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#previousPageButton{
+    left: 20px;
+    right: unset;
+    rotate: 180deg;
+}
+#nextPageButton:hover, #previousPageButton:hover{
+    transform: scale(120%) rotate(360deg);
+}
+
+#homeButton{
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
 }

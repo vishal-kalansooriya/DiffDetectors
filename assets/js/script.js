@@ -1,13 +1,23 @@
-// scale game to window size while maintaining aspect ratio
+// scale game to fit screen while maintaining aspect ratio
 function scaleGame() {
     const game = document.querySelector(".game-container");
-    const scaleX = window.innerWidth / 1366;
-    const scaleY = window.innerHeight / 605;
+    const baseWidth = 1366;
+    const baseHeight = 605;
+    const scaleX = window.innerWidth / baseWidth;
+    const scaleY = window.innerHeight / baseHeight;
     const scale = Math.min(scaleX, scaleY);
-    game.style.transform = `scale(${scale})`;
+    game.style.transform = `
+        translate(-50%, -50%)
+        scale(${scale})
+    `;
 }
 window.addEventListener("resize", scaleGame);
 window.addEventListener("load", scaleGame);
+
+// preloader
+window.addEventListener("load", function() {
+    document.getElementById("preloader").style.display = "none";
+});
 
 // set sound value in local storage and toggle sound on click
 let soundValue = localStorage.getItem("soundValue");
