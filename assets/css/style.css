@@ -98,6 +98,30 @@ button+button:hover{
     background-color: #313131;
     box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
 }
+.greenButton{
+    background-color: #80ee37;
+    box-shadow: inset 0px -5px 5px #255c01, 0px 0px 5px #ffffff;
+}
+.greenButton:hover{
+    background-color: #255c01;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
+.blueButton{
+    background-color: #2e81ff;
+    box-shadow: inset 0px -5px 5px rgb(0, 75, 119), 0px 0px 5px #ffffff;
+}
+.blueButton:hover{
+    background-color: rgb(0, 39, 110);
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
+.pinkButton{
+    background-color: #ff44a1;
+    box-shadow: inset 0px -5px 5px #55012b, 0px 0px 5px #ffffff;
+}
+.pinkButton:hover{
+    background-color: #55012b;
+    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
+}
 
 p{
     font-size: 18px;

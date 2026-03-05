@@ -18,8 +18,8 @@ include 'assets/php/header.php';
     <button onclick="window.location.href='map.php'">Play</button>
 </div>
 <form method="post">
-    <button onclick="window.location.href='leaderboard.php'" type="button">Leaderboard</button>
-    <button name="logout">Logout</button>
+    <button onclick="window.location.href='leaderboard.php'" type="button" class="greenButton">Leaderboard</button>
+    <button name="logout" class="pinkButton">Logout</button>
 </form>
 <?php
 include 'assets/php/footer.php';

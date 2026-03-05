@@ -39,20 +39,3 @@ p{
         transform: scale(1);
     }
 }
-
-form button:nth-of-type(1){
-    background-color: #80ee37;
-    box-shadow: inset 0px -5px 5px #255c01, 0px 0px 5px #ffffff;
-}
-form button:nth-of-type(1):hover{
-    background-color: #255c01;
-    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
-}
-form button:nth-of-type(2){
-    background-color: #ff44a1;
-    box-shadow: inset 0px -5px 5px #55012b, 0px 0px 5px #ffffff;
-}
-form button:nth-of-type(2):hover{
-    background-color: #55012b;
-    box-shadow: inset 0px -5px 5px #000000, 0px 0px 5px #ffffff;
-}

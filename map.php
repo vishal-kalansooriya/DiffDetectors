@@ -7,7 +7,7 @@ include 'assets/php/header.php';
     document.title="Map | " + titleName;
 </script>
 <img id="previousPageButton" src="assets/img/map/arrow.png" alt="img">
-<article id="puzzle1">
+<article id="puzzle1" onclick="window.location.href='game.php'">
     <div class="board">
         <img src="assets/img/map/board.png" alt="img">
         <p class="level">LEVEL 1</p>
@@ -16,7 +16,7 @@ include 'assets/php/header.php';
     <img class="puzzle" src="content/puzzles/1/correct.png" alt="img">
     <img class="icon" src="assets/img/map/done.png" alt="img">
 </article>
-<article id="puzzle2">
+<article id="puzzle2" onclick="window.location.href='game.php'">
     <div class="board">
         <img src="assets/img/map/board.png" alt="img">
         <p class="level">LEVEL 2</p>
@@ -25,7 +25,7 @@ include 'assets/php/header.php';
     <img class="puzzle" src="content/puzzles/1/correct.png" alt="img">
     <img class="icon" src="assets/img/map/done.png" alt="img">
 </article>
-<article id="puzzle3">
+<article id="puzzle3" onclick="window.location.href='game.php'">
     <div class="board">
         <img src="assets/img/map/board.png" alt="img">
         <p class="level">LEVEL 3</p>
@@ -34,7 +34,7 @@ include 'assets/php/header.php';
     <img class="puzzle" src="content/puzzles/1/correct.png" alt="img">
     <img class="icon" src="assets/img/map/question.png" alt="img">
 </article>
-<article id="puzzle4">
+<article id="puzzle4" onclick="window.location.href='game.php'">
     <div class="board">
         <img src="assets/img/map/board.png" alt="img">
         <p class="level">LEVEL 4</p>
@@ -43,7 +43,7 @@ include 'assets/php/header.php';
     <img class="puzzle" src="content/puzzles/1/correct.png" alt="img">
     <img class="icon" src="assets/img/map/current.png" alt="img">
 </article>
-<article id="puzzle5">
+<article id="puzzle5" onclick="window.location.href='game.php'">
     <div class="board">
         <img src="assets/img/map/board.png" alt="img">
         <p class="level">LEVEL 5</p>
@@ -53,7 +53,7 @@ include 'assets/php/header.php';
     <img class="icon" src="assets/img/map/done.png" alt="img">
 </article>
 <img id="nextPageButton" src="assets/img/map/arrow.png" alt="img">
-<button id="homeButton" onclick="window.location.href='home.php'">Go Back</button>
+<button id="homeButton" class="blueButton" onclick="window.location.href='home.php'">Go Back</button>
 <?php
 include 'assets/php/footer.php';
 ?>       
