@@ -1,0 +1,73 @@
+.game-container{
+    background-image: url("../img/leaderboard/bg.jpg");
+    padding: 30px;
+    background-position: bottom;
+}
+.game-container>div, .game-container>form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    font-size: 30px;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+svg{
+    fill: white;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+#leaderboard{
+    width:1000px;
+    height: 400px;
+    margin: 50px auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+.leaderRow{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 20px;
+    font-size:20px;
+}
+.topRank{
+    background: linear-gradient(
+        to right,
+        rgba(51, 51, 51,0.2),
+        rgba(36, 36, 36, 0.6) 10%,
+        rgba(36, 36, 36, 0.6) 90%,
+        rgba(51, 51, 51, 0.2)
+    );
+}
+.currentPlayer{
+    background: linear-gradient(
+        to right,
+        rgba(30,116,247,0.2),
+        rgba(30,116,247, 0.6) 10%,
+        rgba(30,116,247, 0.6) 90%,
+        rgba(30,116,247,0.2)
+    );
+}
+.rank{
+    width:120px;
+}
+.player{
+    flex:1;
+}
+.score{
+    width:150px;
+    text-align:right;
+}
+#columnNames{
+    position: sticky;
+    width: 985px;
+    top: 0px;
+    background-color: #FAA12F;
+}
