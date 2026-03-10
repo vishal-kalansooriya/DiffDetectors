@@ -1,6 +1,11 @@
 <?php
 include 'assets/php/logic.php';
 include 'assets/php/header.php';
+if(isset($_SESSION['username'])){
+    header("Location: home.php");
+}else if(isset($_SESSION['admin_logged_in'])){
+    header("Location: adminPanel.php");
+}
 ?>             
 <link rel="stylesheet" href="assets/css/sign.css">
 <script>
@@ -15,7 +20,7 @@ include 'assets/php/header.php';
     </form>
     <div>
         <p>Don't have an account? <a href="register.php">Register</a></p>
-        <p>Forgot password? <a href="mailto:contact@webnifix.com?subject=Password Reset Request&body=Please%20reset%20my%20password.%0AMy%20Email%20is%3A%20PEASE_TYPE_YOUR_EMAIL_HERE%0AThank%20You!">Reset Password</a></p>
+        <p>Forgot password? <a href="mailto:contact@webnifix.com?subject=Password Reset Request&body=Please%20reset%20my%20password.%0AMy%20Email%20is%3A%20PEASE_TYPE_YOUR_EMAIL_OR_USERNAME_HERE%0AThank%20You!">Reset Password</a></p>
     </div>
 </div>
 <?php

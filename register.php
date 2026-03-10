@@ -1,6 +1,11 @@
 <?php
 include 'assets/php/logic.php';
 include 'assets/php/header.php';
+if(isset($_SESSION['username'])){
+    header("Location: home.php");
+}else if(isset($_SESSION['admin_logged_in'])){
+    header("Location: adminPanel.php");
+}
 ?>             
 <link rel="stylesheet" href="assets/css/sign.css">
 <script>

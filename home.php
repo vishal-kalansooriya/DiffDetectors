@@ -1,6 +1,9 @@
 <?php
 include 'assets/php/logic.php';
 include 'assets/php/header.php';
+if(!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
 ?>             
 <link rel="stylesheet" href="assets/css/home.css">
 <script>
@@ -8,14 +11,14 @@ include 'assets/php/header.php';
 </script>    
 <div id="details">
     <div>
-        <p>Username</p>
-        <p>Score: 800</p>
+        <p><?php echo $username; ?></p>
+        <p>Total Score: <?php echo $totalScore; ?></p>
     </div>
-    <img id="noSound" onclick="toggleSound();" src="assets/img/home/noSound.png" alt="img">
-    <img id="sound" onclick="toggleSound();" src="assets/img/home/sound.png" alt="img">
+    <img class="clickable" id="noSound" onclick="toggleSound();" src="assets/img/home/noSound.png" alt="img">
+    <img class="clickable" id="sound" onclick="toggleSound();" src="assets/img/home/sound.png" alt="img">
 </div>
 <div id="playButton">
-    <button onclick="window.location.href='map.php'">Play</button>
+    <button onclick="window.location.href='map.php?page=1';">Play</button>
 </div>
 <form method="post">
     <button onclick="window.location.href='leaderboard.php'" type="button" class="greenButton">Leaderboard</button>
