@@ -138,3 +138,19 @@ a{
 a:hover{
     color: #585858;
 }
+
+/* scrollbar */
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: #a8a8a8;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #5a5a5a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #2c2c2c;
+}
