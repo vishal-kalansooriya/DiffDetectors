@@ -31,6 +31,17 @@
 #heartsList{
     width: 280px;
 }
+#heartsList img{
+    transition:transform .3s, opacity .3s;
+}
+.heartPop{
+    animation:heartPop .4s forwards;
+}
+@keyframes heartPop{
+    0%{transform:scale(1);opacity:1;}
+    40%{transform:scale(1.5);}
+    100%{transform:scale(0);opacity:0;}
+}
 
 h1{
     font-size: 30px;
@@ -40,18 +51,45 @@ h1{
     margin-top: 20px;
     justify-content: space-around;
 }
-#mainImages>img{
+#mainImages img{
     border: 14px solid white;
-    width: 450px;
-    height: 340px;
+    height: 350px;
+    width: 490px;
     object-fit: contain;
     object-position: center;
     background-color: white;
 }
+#mainImages>div{
+    position: relative;
+}
+#wrongImage{
+    cursor: pointer;
+    display: block;
+}
+
+/* puzzle marks */
+.mark{
+    position:absolute;
+    width:30px;
+    height:30px;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index: 1;
+}
+.correctMark{
+    border:4px solid #00ff00;
+    border-radius:50%;
+}
+.wrongMark{
+    color:red;
+    font-size:28px;
+    font-weight:bold;
+}
+
 
 #bottom{
     position: relative;
-    top: 50px;
+    top: 42px;
 }
 #bottom>div{
     width: 400px;
@@ -86,6 +124,7 @@ svg{
     align-items: center;
     background-color: rgba(255, 255, 255, 0.116);
     backdrop-filter: blur(5px);
+    z-index: 11;
 }
 .infoBox>span{
     position: absolute;
@@ -138,6 +177,7 @@ svg{
     background-position: center;
     background-size: cover;
     text-align: center;
+    z-index: 10;
 }
 .hintOrTime h1{
     margin: 40px 0px;

@@ -12,6 +12,7 @@
     text-shadow: 0px 3px 3px #000000;
     font-weight: normal;
     color: white;
+    user-select: none;
 }
 body{
     height: 100vh;
@@ -54,7 +55,7 @@ h1{
 }
 
 /* default */
-input{
+input, select, textarea{
     max-width: 400px;
     height: 40px;
     width: 100%;
@@ -63,13 +64,14 @@ input{
     padding: 0 10px;
     color: black;
     font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
 }
-
-input[type="password"]{
-    font-family: sans-serif;
-}
-input[type="password"]::placeholder{
+input::placeholder{
     font-family: 'Horizon', sans-serif;
+}
+select>option{
+    color: black;
 }
 
 button{
