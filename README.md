@@ -3,6 +3,8 @@
 DiffDetectors is a web-based *spot-the-difference* puzzle game designed as an academic project for the unit **CIS046-3 – Software For Enterprise**.  
 The game combines interactive gameplay with enterprise software concepts such as authentication, event-driven programming, interoperability, and version control.
 
+Play Online: [Diff Detectors](https://webnifix.com/DiffDetectors)
+
 ---
 
 ## 📌 Project Overview
