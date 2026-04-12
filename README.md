@@ -5,6 +5,8 @@ The game combines interactive gameplay with enterprise software concepts such as
 
 Play Online: [Diff Detectors](https://webnifix.com/DiffDetectors)
 
+Latest Version: v2.0
+
 ---
 
 ## 📌 Project Overview
