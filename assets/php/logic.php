@@ -2,6 +2,7 @@
 session_start();
 // database connection
 $conn = new mysqli("localhost","root","","diffdetectors");
+// $conn = new mysqli("localhost","webnifix_diffdetectors","6ygCSu.aV*#B5[EC","webnifix_diffdetectors");
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
@@ -67,13 +68,21 @@ if(isset($_POST['login'])){
     if($result->num_rows > 0){
         $user = $result->fetch_assoc();
         if(password_verify($password, $user['password'])){
-            if ($username == "admin") {
+            if (strtolower($username) == "admin") {
                 $otp = random_int(100000,999999);
                 $_SESSION['admin_otp'] = $otp;
                 $_SESSION['otp_time'] = time();
                 $_SESSION['otp_attempts'] = 0;
                 $_SESSION['admin_user'] = $username;
-                mail($user['email'],"Admin Login OTP","Your OTP code is: $otp");
+
+                $subject = "Admin Login OTP";
+                $to = "contact@webnifix.com";
+                $message = "Your OTP code is: $otp";
+                $headers = "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8\r\n";
+                $headers .= "From: <contact@webnifix.com>\r\n";
+                mail($to, $subject, $message, $headers);
+
                 echo "<script>window.location='adminLogin.php?otp=$otp';</script>";
                 exit();
             }else{

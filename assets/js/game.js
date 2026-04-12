@@ -54,54 +54,51 @@ fetch("assets/php/shortcutQuestionsApi.php")
     })
 });
 
-// puzzle marking and chances logic
-let correctPointsCount = 0;
-let extraTime = 0;
-let hearts = document.querySelectorAll("#heartsList img");
-let heartsLeft = hearts.length;
-const puzzle = document.getElementById("wrongImage");
-const container = document.querySelector("#mainImages>div");
-const tolerance = 20;
-puzzle.addEventListener("click", function(e){
-const rect = puzzle.getBoundingClientRect();
-const containerRect = container.getBoundingClientRect();
-const style = window.getComputedStyle(puzzle);
-const borderLeft = parseFloat(style.borderLeftWidth);
-const borderTop = parseFloat(style.borderTopWidth);
-const clickX = ((e.clientX - rect.left) - borderLeft) / gameScale;
-const clickY = ((e.clientY - rect.top) - borderTop) / gameScale;
-const posX = (e.clientX - containerRect.left) / gameScale;
-const posY = (e.clientY - containerRect.top) / gameScale;
-    let found = false;
-    correctPoints.forEach(point => {
+// points marking on puzzle
+let correctPointsCount=0;
+let extraTime=0;
+let hearts=document.querySelectorAll("#heartsList img");
+let heartsLeft=hearts.length;
+const puzzle=document.getElementById("wrongImage");
+const container=document.querySelector("#mainImages>div");
+const tolerance=0.08;
+puzzle.addEventListener("click",function(e){
+    const rect=puzzle.getBoundingClientRect();
+    const containerRect=container.getBoundingClientRect();
+    const percentX=(e.clientX-rect.left)/rect.width;
+    const percentY=(e.clientY-rect.top)/rect.height;
+    const posX=(e.clientX-containerRect.left)/gameScale;
+    const posY=(e.clientY-containerRect.top)/gameScale;
+    let found=false;
+    correctPoints.forEach(point=>{
         if(
             !point.found &&
-            Math.abs(clickX - point.x) <= tolerance &&
-            Math.abs(clickY - point.y) <= tolerance
+            Math.abs(percentX-point.x)<=tolerance &&
+            Math.abs(percentY-point.y)<=tolerance
         ){
-            point.found = true;
-            showCorrect(posX, posY);
-            found = true;
+            point.found=true;
+            showCorrect(posX,posY);
+            found=true;
         }
     });
     if(!found){
-        showWrong(posX, posY);
+        showWrong(posX,posY);
     }
 });
+let scoreSaved=false;
 function showCorrect(x,y){
     playSound("assets/sounds/correctSpot.wav");
-    const mark = document.createElement("div");
+    const mark=document.createElement("div");
     mark.classList.add("mark","correctMark");
-    mark.style.left = x+"px";
-    mark.style.top = y+"px";
+    mark.style.left=x+"px";
+    mark.style.top=y+"px";
     container.appendChild(mark);
     correctPointsCount++;
-    let scoreSaved = false;
-    if(correctPointsCount == 3 && !scoreSaved){
-        scoreSaved = true;
-        let finalScore = timeLeft + (heartsLeft * 10) - extraTime;
+    if(correctPointsCount==3 && !scoreSaved){
+        scoreSaved=true;
+        let finalScore=timeLeft+(heartsLeft*10)-extraTime;
         setTimeout(()=>{
-            puzzleComplete.style.display = "block";
+            puzzleComplete.style.display="block";
             playSound("assets/sounds/success.wav");
             fetch("assets/php/saveScore.php",{
                 method:"POST",
@@ -109,10 +106,10 @@ function showCorrect(x,y){
                     puzzleId:puzzleIdNumber,
                     score:finalScore
                 })
-            })
+            });
         },300);
     }
-} 
+}
 function showWrong(x,y){
     playSound("assets/sounds/wrongSpot.wav");
     const mark=document.createElement("div");
