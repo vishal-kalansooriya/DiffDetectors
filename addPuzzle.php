@@ -8,24 +8,25 @@ if(!isset($_SESSION['admin_logged_in'])){
 ?>          
 <link rel="stylesheet" href="assets/css/addPuzzle.css">
 <script>
-document.title="Add Puzzle | " + titleName;
+    document.title="Add Puzzle | "+titleName;
 
-var spots=[];
-const maxSpots=3;
-window.onload=function(){
+    // mark spots and show preview images
+    var spots=[];
+    const maxSpots=3;
+    window.onload=function(){
     const previewBox=document.getElementById("spotMissingImagePreview");
     const spotsInput=document.getElementById("spotsData");
-    const correctInput = document.getElementById("uploadCorrectImage");
-    const correctPreviewBox = correctInput.nextElementSibling;
-    correctInput.addEventListener("change", function() {
-        const file = this.files[0];
-        if (!file) {
-            correctPreviewBox.innerHTML = "";
+    const correctInput=document.getElementById("uploadCorrectImage");
+    const correctPreviewBox=correctInput.nextElementSibling;
+    correctInput.addEventListener("change",function(){
+        const file=this.files[0];
+        if(!file){
+            correctPreviewBox.innerHTML="";
             return;
         }
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            correctPreviewBox.innerHTML = `<img src="${e.target.result}" draggable="false">`;
+        const reader=new FileReader();
+        reader.onload=function(e){
+            correctPreviewBox.innerHTML=`<img src="${e.target.result}" draggable="false">`;
         };
         reader.readAsDataURL(file);
     });
@@ -34,7 +35,7 @@ window.onload=function(){
         if(!file){
             previewBox.innerHTML="";
             spots=[];
-            spotsInput.value='[]';
+            spotsInput.value="[]";
             return;
         }
         const reader=new FileReader();
@@ -43,23 +44,23 @@ window.onload=function(){
             const img=previewBox.querySelector("img");
             img.addEventListener("click",function(ev){
                 const rect=img.getBoundingClientRect();
-                const scaleX=img.naturalWidth/rect.width;
-                const scaleY=img.naturalHeight/rect.height;
-                const clickX=(ev.clientX-rect.left)/gameScale;
-                const clickY=(ev.clientY-rect.top)/gameScale;
-                const trueX=Math.round(clickX*scaleX);
-                const trueY=Math.round(clickY*scaleY);
+                const percentX = Number(((ev.clientX - rect.left) / rect.width).toFixed(4));
+                const percentY = Number(((ev.clientY - rect.top) / rect.height).toFixed(4));
                 for(let p of spots){
-                    if(Math.abs(p.x-trueX)<=2 && Math.abs(p.y-trueY)<=2) return;
+                    if(Math.abs(p.x-percentX)<=0.01 && Math.abs(p.y-percentY)<=0.01){
+                        return;
+                    }
                 }
                 if(spots.length>=maxSpots) return;
-                spots.push({x:trueX,y:trueY,found:false});
-                const displayX=trueX/scaleX;
-                const displayY=trueY/scaleY;
+                spots.push({
+                    x:percentX,
+                    y:percentY,
+                    found:false
+                });
                 const mark=document.createElement("div");
                 mark.classList.add("spotMarker");
-                mark.style.left=displayX-6+"px";
-                mark.style.top=displayY-6+"px";
+                mark.style.left=(percentX*100)+"%";
+                mark.style.top=(percentY*100)+"%";
                 previewBox.appendChild(mark);
                 spotsInput.value=JSON.stringify(spots);
             });
@@ -74,8 +75,8 @@ window.onload=function(){
         };
         reader.readAsDataURL(file);
     });
-};
-</script>   
+    };
+</script>  
 <h1>+ Add Puzzle +</h1>
 <form method="post" enctype="multipart/form-data">
     <div>
