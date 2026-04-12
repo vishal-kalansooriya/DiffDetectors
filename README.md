@@ -26,7 +26,7 @@ The objective is to identify all missing spots within a limited time while avoid
 - Countdown timer based on difficulty (Easy / Normal / Hard)
 - Limited wrong attempts displayed as hearts
 - Hint system powered by the **Banana API**
-- Bonus time challenges via external API integration
+- Bonus time challenges via custom made API integration (shortcutQuestionsApi)
 - Score calculation based on remaining original time
 - Retry and level-map navigation on failure
 
@@ -51,6 +51,7 @@ The objective is to identify all missing spots within a limited time while avoid
 - Define missing spot locations using grid points
 - Add hint messages
 - Set difficulty level and maximum solving time
+- Delete puzzles when needed
 
 ---
 
@@ -78,7 +79,7 @@ The objective is to identify all missing spots within a limited time while avoid
 - Countdown timers and dynamic game state changes
 
 ### 3. Interoperability
-- Integration with the Banana API via HTTP requests
+- Integration with the Banana API via HTTP requests and also my custom made shortcutQuestionsApi
 - JSON data exchange between systems
 - Communication between frontend, backend, database, and external services
 
